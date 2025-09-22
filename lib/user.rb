@@ -25,4 +25,8 @@ class User
     email.match?(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
   end
 
+  def find_by_email(email)
+    @@user_list.find { |user| user.email == email }
+  end
+
 end
