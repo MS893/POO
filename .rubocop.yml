@@ -1,0 +1,13 @@
+# Configuration de rubocop
+
+Layout/LineLength:
+  Enabled: false
+
+Style:
+  Enabled: false
+
+Style/Alias:
+  Enabled: true
+
+Gemspec/DependencyVersion:
+  Enabled: true
