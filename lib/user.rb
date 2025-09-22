@@ -18,15 +18,13 @@ class User
     @@user_list
   end
 
-  private # Toutes les méthodes en dessous de cette balise seront privées.
-
-  def check_email(email)
-    # Cette regex vérifie la présence de caractères avant et après le '@', ainsi qu'un point dans le domaine.
-    email.match?(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
-  end
-
   def find_by_email(email)
     @@user_list.find { |user| user.email == email }
   end
 
+  private # Toutes les méthodes en dessous de cette balise seront privées.
+  def check_email(email)
+    # Cette regex vérifie la présence de caractères avant et après le '@', ainsi qu'un point dans le domaine.
+    email.match?(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
+  end
 end
