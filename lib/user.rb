@@ -13,12 +13,12 @@ class User
     end
   end
 
-  # retourne la liste des utilisateurs
+  # retourne la liste des utilisateurs (self. car method de classe)
   def self.all
     @@user_list
   end
 
-  def find_by_email(email)
+  def self.find_by_email(email)
     @@user_list.find { |user| user.email == email }
   end
 
