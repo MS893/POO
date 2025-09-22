@@ -7,12 +7,11 @@ require_relative 'lib/user'
 require_relative 'lib/event'
 
 
-Event.new("2019-01-13 09:00", 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
-puts Event.all
+my_event = Event.new(Time.now.strftime("%Y-%m-%d %H:%M"), 10, "standup quotidien", ["truc@machin.com", "bidule@chose.fr"])
 
-=begin
-julie = User.new("julie@email.com", 32)
-puts julie.email
-puts julie.age
-puts User.all
-=end
+my_event.postpone_24h
+
+my_event.to_s
+puts my_event.is_past?
+puts my_event.is_future?
+puts my_event.is_soon?
